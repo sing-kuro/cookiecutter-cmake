@@ -1,0 +1,9 @@
+{
+    "project_name": "my_project",
+    "github_username": "",
+    "repo_name": "{{ cookiecutter.project_name }}",
+    "include_dir": "{{ cookiecutter.project_name.replace('-', '_') }}",
+    "release_branches": "master",
+    "project_upper": "{{ cookiecutter.project_name.upper().replace('-', '_') }}",
+    "name_space": "{{ cookiecutter.project_name.lower().replace('-', '_') }}"
+}
