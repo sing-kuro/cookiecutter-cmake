@@ -25,24 +25,31 @@ jobs:
           - os: windows-latest
             c_compiler: cl
             cpp_compiler: cl
+            generator: Visual Studio 17 2022
           - os: windows-latest
             c_compiler: gcc
             cpp_compiler: g++
+            generator: Ninja
           - os: windows-latest
             c_compiler: clang
             cpp_compiler: clang++
+            generator: Ninja
           - os: ubuntu-latest
             c_compiler: gcc
             cpp_compiler: g++
+            generator: Ninja
           - os: ubuntu-latest
             c_compiler: clang
             cpp_compiler: clang++
+            generator: Ninja
           - os: macOS-latest
             c_compiler: gcc
             cpp_compiler: g++
+            generator: Xcode
           - os: macOS-latest
             c_compiler: clang
             cpp_compiler: clang++
+            generator: Xcode
         exclude:
           - os: ubuntu-latest
             c_compiler: cl
@@ -69,6 +76,7 @@ jobs:
         -DCMAKE_BUILD_TYPE=${{ '{{ matrix.build_type }}' }}
         -DENABLE_TESTING_{{ cookiecutter.project_upper }}=ON
         -DBUILD_{{ cookiecutter.project_upper }}_DOCS=OFF
+        -G "${{ matrix.generator }}"
         -S ${{ '{{ github.workspace }}' }}
 
     - name: Build
