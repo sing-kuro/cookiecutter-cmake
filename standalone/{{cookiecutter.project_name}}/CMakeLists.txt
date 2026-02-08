@@ -5,7 +5,7 @@ project({{ cookiecutter.project_name }} VERSION 0.1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-option(BUILD_{{ cookiecutter.project_upper }} "Build the library" ON)
+option(BUILD_{{ cookiecutter.project_upper }} "Build the executable" ON)
 option(ENABLE_TESTING_{{ cookiecutter.project_upper }} "Enable testing" OFF)
 option(BUILD_{{ cookiecutter.project_upper }}_DOCS "Build documentation" OFF)
 

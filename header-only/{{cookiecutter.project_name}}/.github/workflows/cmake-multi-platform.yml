@@ -67,7 +67,8 @@ jobs:
         -DCMAKE_CXX_COMPILER=${{ '{{ matrix.cpp_compiler }}' }}
         -DCMAKE_C_COMPILER=${{ '{{ matrix.c_compiler }}' }}
         -DCMAKE_BUILD_TYPE=${{ '{{ matrix.build_type }}' }}
-        -DENABLE_{{ cookiecutter.project_upper }}_TESTING=ON
+        -DENABLE_TESTING_{{ cookiecutter.project_upper }}=ON
+        -DBUILD_{{ cookiecutter.project_upper }}_DOCS=OFF
         -S ${{ '{{ github.workspace }}' }}
 
     - name: Build
