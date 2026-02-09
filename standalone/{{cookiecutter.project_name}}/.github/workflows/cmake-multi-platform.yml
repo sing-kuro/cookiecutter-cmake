@@ -76,7 +76,7 @@ jobs:
         -DCMAKE_BUILD_TYPE=${{ '{{ matrix.build_type }}' }}
         -DENABLE_TESTING_{{ cookiecutter.project_upper }}=ON
         -DBUILD_{{ cookiecutter.project_upper }}_DOCS=OFF
-        -G "${{ matrix.generator }}"
+        -G ${{ '{{ matrix.generator }}' }}
         -S ${{ '{{ github.workspace }}' }}
 
     - name: Build
