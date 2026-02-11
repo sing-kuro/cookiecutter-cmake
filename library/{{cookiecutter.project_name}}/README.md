@@ -45,7 +45,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable({{ cookiecutter.project_name }})
 
 add_executable(YourApp main.cpp)
-target_link_libraries(YourApp PRIVATE {{ cookiecutter.project_name }}::{{ cookiecutter.project_name }})
+target_link_libraries(YourApp PRIVATE {{ cookiecutter.project_name }})
 ```
 
 ## Usage
